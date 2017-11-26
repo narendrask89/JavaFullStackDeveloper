@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<head>
+<title>This is my first HTML page</title>
+<meta charset="UTF-8"/>
+<style>
+#demo{
+color:red;
+}
+
+table {
+	font-family:arial, sans-serif;
+	border-collapse:collapse;
+	width:100%;
+}
+
+td{
+	border: 1px solid #dddddd;
+	text-align:left;
+	padding:8px;
+}
+
+tr:nth-child(even){
+	background-color:#dddddd;
+}
+th {
+	background-color: #DD5463;
+	text-align:left;
+	border: 1px solid #dddddd;
+}
+
+</style>
+</head>
+<body>
+<p style ="color:red" title="this is tooltip">This is Paragraph</p>
+<h1 style="font-size:60px">This is header section</h1>
+<hr>
+<h2 style="background-color:MediumSeaGreen;font-family:verdana;text-align:center;">This is header section</h2>
+<h3 id="demo">This is header section</h3>
+<h4 id="demo">This is header section</h4>
+<h5>This is header section</h5>
+<h6>This is header section</h6>
+
+<a href="http://www.w3schools.com">This is a link</a></br>
+<img src="img_girl.jpg" alt="This is img text" width="500" height="500"><br>
+<a href="http://www.w3schools.com" title="Click Image to open w3schools website">
+<img src="html5.gif" alt="HTML5 image" style="width:128px;height:128px;">
+</a>
+<form>
+<fieldset>
+<legend>Personal Information</legend>
+First Name:<br><input type="text" id="firstname"/><br>
+Last Name:<br><input type="text" id="lastname"/><br>
+<input type="radio" name="gender" value="male" checked>Male</input><br>
+<input type="radio" name="gender" value="female" >Female</input><br>
+<input type="radio" name="gender" value="other" >Other</input><br>
+<input type="button" value="Submit"/>
+</fieldset>
+</form>
+
+<table>
+<caption><b>Company Details</b></caption>
+<tr>
+<th>Company</th>
+<th>Contact</th>
+<th>Country</th>
+<tr>
+<tr>
+<td>Capgemini</td>
+<td>123456789</td>
+<td>USA</td>
+</tr>
+<tr>
+<td>Capgemini</td>
+<td>123456789</td>
+<td>India</td>
+</tr>
+<tr>
+<td>Capgemini</td>
+<td>123456789</td>
+<td>France</td>
+</tr>
+<tr>
+<td>Capgemini</td>
+<td>123456789</td>
+<td>Japan</td>
+</tr>
+</table>
+
+
+</body>
+</html>
