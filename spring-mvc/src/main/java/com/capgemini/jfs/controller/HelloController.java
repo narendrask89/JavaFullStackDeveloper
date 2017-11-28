@@ -13,4 +13,15 @@ public class HelloController {
 		model.addAttribute("name", "Narendra");
 		return "home";
 	}
+	@RequestMapping("/registration")
+	public String registrationPage(){
+		 
+		return "registration";
+	}
+	
+	@RequestMapping("/registered")
+	public String success(){
+		
+		return "success";
+	}
 }

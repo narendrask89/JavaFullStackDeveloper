@@ -9,7 +9,7 @@
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.capgemini.jfs.controller" />
 
-	<mvc:resources location="pdfs" mapping="/pdfs/**"></mvc:resources>
+	<!-- <mvc:resources location="pdfs" mapping="/pdfs/**"></mvc:resources> -->
 
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
