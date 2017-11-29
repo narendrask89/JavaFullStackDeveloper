@@ -7,11 +7,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Repository;
 
 import com.capgemini.jfs.model.Manufacturer;
 
 @Repository
+@PreAuthorize("hasRole('ROLE_ADMIN')")
 public class ManufacturerRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
