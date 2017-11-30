@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.capgemini"/>
+	<context:component-scan base-package="com.capgemini" />
 	<tx:annotation-driven transaction-manager="transactionManager" />
-
+	<jpa:repositories base-package="com.capgemini.repository" />
 	<bean
 		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"></bean>
-		
+
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="persistenceUnitName" value="punit"></property>
@@ -24,28 +25,27 @@
 		</property>
 		<property name="jpaPropertyMap">
 			<map>
-				<entry key="hiberate.dialect" value="org.hibernate.dialect.H2Dialect"></entry>
-				<entry key="hibernate.hbm2ddl.auto" value="create-drop"></entry>
+				<!-- <entry key="hiberate.dialect" value="org.hibernate.dialect.H2Dialect"></entry> -->
+				<entry key="hiberate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"></entry>
+				<entry key="hibernate.hbm2ddl.auto" value="none"></entry>
 				<entry key="hibernate.format_sql" value="true"></entry>
 			</map>
 		</property>
 	</bean>
 
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="org.h2.Driver"></property> <property 
+		name="url" value="jdbc:h2:~/test"></property> <property name="username" value="sa"></property> 
+		<property name="password" value=""></property> </bean> -->
+
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.h2.Driver"></property>
-		<property name="url" value="jdbc:h2:~/test"></property>
-		<property name="username" value="sa"></property>
-		<property name="password" value=""></property>
-	</bean>
-	
-	<!-- <bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/fitnessTracker"></property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/fitnessTracker?useSSL=false"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="password"></property>
-	</bean> -->
+		<property name="password" value="admin"></property>
+	</bean>
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory"></property>

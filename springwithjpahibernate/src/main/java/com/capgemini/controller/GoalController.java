@@ -1,5 +1,7 @@
 package com.capgemini.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,9 +42,17 @@ public class GoalController {
 		if (result.hasErrors()) {
 			return "addGoal";
 		} else {
-			 goalService.save(goal);
+			goalService.save(goal);
 		}
 
 		return "redirect:index.jsp";
+	}
+
+	@RequestMapping(value = "getGoals", method = RequestMethod.GET)
+	public String getGoals(Model model) {
+
+		List<Goal> goals = this.goalService.findAllGoals();
+		model.addAttribute("goals", goals);
+		return "getGoals";
 	}
 }

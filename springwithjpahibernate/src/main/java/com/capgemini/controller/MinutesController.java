@@ -2,6 +2,7 @@ package com.capgemini.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.capgemini.model.Activity;
 import com.capgemini.model.Exercise;
+import com.capgemini.model.Goal;
 import com.capgemini.service.ExerciseService;
 
 
@@ -30,13 +32,17 @@ public class MinutesController {
 	}
 	
 	@RequestMapping(value = "/addMinutes",  method = RequestMethod.POST)
-	public String addMinutes(@Valid @ModelAttribute ("exercise") Exercise exercise, BindingResult result) {
+	public String addMinutes(@Valid @ModelAttribute ("exercise") Exercise exercise, HttpSession httpSession, BindingResult result) {
 		
 		System.out.println("exercise: " + exercise.getMinutes());
 		System.out.println("exercise activity: " + exercise.getActivity());
 		
 		if(result.hasErrors()) {
 			return "addMinutes";
+		} else {
+			Goal goal = (Goal) httpSession.getAttribute("goal");
+			exercise.setGoal(goal);
+			this.exerciseService.save(exercise);
 		}
 		
 		return "addMinutes";
