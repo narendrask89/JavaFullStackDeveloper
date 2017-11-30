@@ -7,6 +7,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<context:annotation-config />
+	<context:component-scan base-package="com.capgemini"/>
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<bean
@@ -24,7 +25,7 @@
 		<property name="jpaPropertyMap">
 			<map>
 				<entry key="hiberate.dialect" value="org.hibernate.dialect.H2Dialect"></entry>
-				<entry key="hibernate.hbm2ddl.auto" value="create"></entry>
+				<entry key="hibernate.hbm2ddl.auto" value="create-drop"></entry>
 				<entry key="hibernate.format_sql" value="true"></entry>
 			</map>
 		</property>

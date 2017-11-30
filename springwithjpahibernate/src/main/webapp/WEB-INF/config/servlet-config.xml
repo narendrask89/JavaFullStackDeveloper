@@ -13,7 +13,7 @@
 	<mvc:resources location="assets" mapping="/assets/**"/>
 	<mvc:resources location="pdfs" mapping="/pdfs/**"/>
 	
-	<context:component-scan base-package="com.capgemini"/>
+	<context:component-scan base-package="com.capgemini.controller"/>
 	
 	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="order" value="1" />

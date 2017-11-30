@@ -10,13 +10,26 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+
+	<servlet>
+		<servlet-name>H2Console</servlet-name>
+		<servlet-class>org.h2.server.web.WebServlet</servlet-class>
+		<!-- <init-param> <param-name>webAllowOthers</param-name> <param-value></param-value> 
+			</init-param> <init-param> <param-name>trace</param-name> <param-value></param-value> 
+			</init-param> -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>H2Console</servlet-name>
+		<url-pattern>/console/*</url-pattern>
+	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>fitTrackerServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/config/servlet-config.xml,/WEB-INF/config/jpaContext.xml</param-value>
+			<param-value>/WEB-INF/config/servlet-config.xml</param-value>
 		</init-param>
 	</servlet>
 
