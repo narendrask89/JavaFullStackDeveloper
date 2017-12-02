@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="css/employee.css">
 <title>Employee Management System</title>
 </head>
 <body>
 	<div align="center">
 		<h1>Employee List</h1>
-		<table border="1">
+		<table id="employees">
 			<tr>
 			<th>Name</th>
 			<th>Email</th>
