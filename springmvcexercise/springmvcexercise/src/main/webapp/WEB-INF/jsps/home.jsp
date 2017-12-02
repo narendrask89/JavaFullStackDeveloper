@@ -24,14 +24,14 @@
 					<td>${employee.email}</td>
 					<td>${employee.address}</td>
 					<td>${employee.telephone}</td>
-					<td><a href="editEmployee?id=${employee.id}">Edit</a>
+					<td><a href="editEmployee?id=${employee.id}" class="button">Edit</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="deleteEmployee?id=${employee.id}">Delete</a></td>
+						href="deleteEmployee?id=${employee.id}" class="button">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>
 		<h4>
-			New Employee Register <a href="newEmployee">here</a>
+			New Employee Register <a href="newEmployee" class="button">register</a>
 		</h4>
 	</div>
 </body>
