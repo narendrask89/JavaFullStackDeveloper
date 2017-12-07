@@ -8,5 +8,8 @@
 </head>
 <body>
 	<h1 style="color:orange;text-align:center">Welcome to Spring MVC4 Practice Demo session</h1>
+	<h1 style="color:orange;text-align:center">Welcome to ${event.name}</h1>
+	<a href="event.html">Go to Event Page</a>
+	<a href="attendee.html">Go to Attendee Page</a>
 </body>
 </html>
