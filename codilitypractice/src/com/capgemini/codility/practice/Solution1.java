@@ -16,7 +16,7 @@ public class Solution1 {
 				max = Math.max(max, A[i] + A[j] + (i - j));
 			}
 		}
-		return max;
+		return max < 0 ? 1 : max;
 	}
 
 }
