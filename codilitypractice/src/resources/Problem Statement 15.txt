@@ -1,0 +1,16 @@
+You are given a string S consisting of N brackets, opening “(“ and/or closing”)”. The goal is to split S into two parts such that the number of opening brackets in the first part is equal to the number of closing brackets in the second part. More formally, we are looking for an integer k such that:
+0<=K<=N and
+The number of opening brackets in the K leading characters of S is the same as the number of closing brackets in the N-K trailing characters of S.
+For example, given S=”(())))(“,k equals 4,because:
+The first characters of S,”(())”,contain two opening brackets and
+The remaining three brackets of S,”))(“,contain two closing brackets.
+Write a function:
+Class Solution{public int solution(String s);}
+That, given string S, returns a value for K that satisfies the above conditions. It can be shown that such an index K always exists and is unique.
+For example, given S=”(())))(“,the function should return 4, as explained above.
+Assume that:
+N is an integer within the range[0..100000];
+String s consists only of the characters”(“ and /or”)”.
+Complexity :
+Expected worst case time complexity is 0(N);
+Expected worst case space complexity is 0(1)(not counting the storage required for input arguments).
